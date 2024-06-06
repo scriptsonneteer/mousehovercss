@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Proxima+Nova:wght@700&display=swap');
+ /* Importing Proxima Nova font with bold weight */
+
+body {
+    display: flex; /* Using flexbox to align items */
+    justify-content: center; /* Centering items horizontally */
+    align-items: center; /* Centering items vertically */
+    height: 100vh; /* Making the body take full viewport height */
+    margin: 0; /* Removing default margin */
+    background-color: #323138; /* Setting background color to #323138 */
+    font-family: 'Proxima Nova', Arial, sans-serif; 
+    /* Setting the font family to Proxima Nova */
+}
+
+.container {
+    text-align: center; /* Centering text within the container */
+}
+
+.highlight-text {
+    font-size: 24px; /* Setting the font size to 24 pixels */
+    color: #fff; /* Setting the text color to white */
+    position: relative; /* Positioning relative to allow pseudo-element positioning */
+    display: inline-block; /* Making the element inline-block for proper hover effect */
+    cursor: pointer; /* Changing cursor to pointer on hover */
+    transition: color 0.3s ease; /* Smooth transition for text color */
+    font-weight: bold; /* Ensuring bold weight */
+}
+
+.highlight-text::before {
+    content: ''; /* Adding a pseudo-element before the text */
+    position: absolute; /* Positioning the pseudo-element absolutely */
+    left: 0; /* Aligning to the left */
+    bottom: 0; /* Aligning to the bottom */
+    height: 100%; /* Making it full height of the text */
+    width: 0; /* Initial width is 0 */
+    background-color: #f6d984; /* Highlight color */
+    z-index: -1; /* Positioning it behind the text */
+    transition: width 0.3s ease; /* Smooth transition for width */
+}
+
+.highlight-text:hover {
+    color: #2a2a2a; /* Changing text color to black on hover */
+}
+
+.highlight-text:hover::before {
+    width: 100%; /* Expanding the highlight to full width on hover */
+}
